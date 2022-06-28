@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -14,18 +15,17 @@
             <h1>osu! Sensitivity Calculator for Mouse</h1>
         </div>
         PPI
-        <input id="ppi" value="800" title="Mouse DPI or PPI" />
+        <input id="ppi" type="number" value="800" title="Mouse's DPI or PPI used." />
         <br />Windows Sensitivity
-        <input id="wintext" type="number" value="6" min="1" max="11" title="Windows Sensitivity" oninput="winsens.value=wintext.value" />
-        <input id="winsens" type="range" value="6" min="1" max="11" title="Windows Sensitivity Slider" oninput="wintext.value=winsens.value" />
+        <input id="wintext" type="number" value="6" min="1" max="11" title="Windows' sensitivity used from 1 to 11" oninput="winsens.value=wintext.value" />
+        <input id="winsens" type="range" value="6" min="1" max="11" title="Windows' sensitivity range from 1 to 11" oninput="wintext.value=winsens.value" />
         <br />osu! Sensitivity Multiplier
-        <input id="osusens" value="1" title="osu! Sensitivity" />
-        <br />
+        <input id="osusens" type="number" min="0.4" max="6" value="1" title="Sensitivity multiplier used in osu!" />
         <br />Resolution:
         <br />Width:
-        <input id="width" value="800" title="In-game Resolution Width" />
+        <input id="width" type="number" value="800" title="In-game screen resolution width" />
         <br />Height:
-        <input id="height" value="600" title="In-game Resolution Height" />
+        <input id="height" type="number" value="600" title="In-game screen resolution height" />
         <div id="results">
             <br />
             <div>Effective PPI: <span id='result'></span></div>
