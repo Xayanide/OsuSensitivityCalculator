@@ -61,7 +61,7 @@ $(document).ready(function() {
     let effwidth;
     let effHeight;
     let ppi = 800;
-    let winsens = 10;
+    let winsens = 6;
     let osusens = 1;
     let winWidth = 800;
     let winHeight = 600;
