@@ -6,11 +6,13 @@ $(document).ready(function() {
 
     $('#winsens').change(function() {
         winsens = $(this).val();
+        $('#winsensrange').val(winsens);
         calculateSens();
     });
 
     $('#winsensrange').change(function() {
         winsens = $(this).val();
+        $('#winsens').val(winsens);
         calculateSens();
     });
 
