@@ -53,13 +53,13 @@ $(document).ready(function() {
         $('#result').text(effectivePPI);
         $('#playres').text(playWidth + 'x' + playHeight);
         effwidth = Math.round((playWidth / effectivePPI) * 100) / 100;
-        effHeight = Math.round((playHeight / effectivePPI) * 100) / 100;
-        $('#playarea').text(effwidth + '" x ' + effHeight + '"');
-        $('#playareacm').text(effwidth * 2.54 + 'cm x ' + effHeight * 2.54 + 'cm');
+        effheight = Math.round((playHeight / effectivePPI) * 100) / 100;
+        $('#playarea').text(effwidth + '" x ' + effheight + '"');
+        $('#playareacm').text(effwidth * 2.54 + 'cm x ' + effheight * 2.54 + 'cm');
     };
     let effectivePPI;
     let effwidth;
-    let effHeight;
+    let effheight;
     let ppi = 800;
     let winsens = 6;
     let osusens = 1;
