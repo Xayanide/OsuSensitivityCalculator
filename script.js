@@ -53,6 +53,7 @@ $(document).ready(function() {
             return 0;
         }
     };
+
     const calculateSensitivity = function() {
         getPlayArea();
         effectivePPI = ppi * getWindowsMultiplier(windowsSensitivity) * osuSensitivity;
@@ -64,6 +65,7 @@ $(document).ready(function() {
         $('#playarea-cm').text($('#playarea-round').is(':checked') ? `${Math.round(effectiveWidth * 2.54)}cm x ${Math.round(effectiveHeight * 2.54)}cm` : `${(effectiveWidth) * 2.54}cm x ${effectiveHeight * 2.54}cm`);
         $('#playarea-mm').text($('#playarea-round').is(':checked') ? `${Math.round(effectiveWidth * 25.4)}mm x ${Math.round(effectiveHeight * 25.4)}mm` : `${(effectiveWidth) * 25.4}mm x ${effectiveHeight * 25.4}mm`);
     };
+
     let effectivePPI;
     let effectiveWidth;
     let effectiveHeight;
