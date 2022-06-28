@@ -1,7 +1,3 @@
-function updateTextInput(val) {
-    document.getElementById('textInput').value = val;
-}
-
 $(document).ready(function() {
     $('#ppi').change(function() {
         ppi = $(this).val();
