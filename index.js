@@ -4,12 +4,12 @@ $(document).ready(function() {
         calculateSens();
     });
 
-    $('#textInput').change(function() {
+    $('#winsens').change(function() {
         winsens = $(this).val();
         calculateSens();
     });
 
-    $('#winsens').change(function() {
+    $('#winsensrange').change(function() {
         winsens = $(this).val();
         calculateSens();
     });
