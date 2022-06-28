@@ -15,10 +15,10 @@
         PPI
         <input id="ppiInput" type="number" value="800" title="Mouse's DPI or PPI used." />
         <br />Windows Sensitivity
-        <input id="windowsNumberInput" type="number" value="6" min="1" max="11" title="Windows' sensitivity used from 1 to 11" oninput="windowsRangeInput.value=windowsNumberInput.value" />
-        <input id="windowsRangeInput" type="range" value="6" min="1" max="11" title="Windows' sensitivity range from 1 to 11" oninput="windowsNumberInput.value=windowsRangeInput.value" />
+        <input id="windowsNumberInput" type="number" value="6" min="1" max="11" title="Windows' sensitivity used from 1 to 11" />
+        <input id="windowsRangeInput" type="range" value="6" min="1" max="11" title="Windows' sensitivity range from 1 to 11" />
         <br />osu! Sensitivity Multiplier
-        <input id="gameNumberInput" type="number" step="any" min="0.4" max="6" value="1" title="Sensitivity multiplier used in osu!" />
+        <input id="gameNumberInput" type="number" step="0.1" min="0.40" max="6" value="1" title="Sensitivity multiplier used in osu!" />
         <br />
         <br />Resolution:
         <br />Width:
@@ -33,8 +33,9 @@
             <div>Playarea (cm): <span id='playAreaCM'></span></div>
             <div>Playarea (mm): <span id='playAreaMM'></span></div>
             <div>
-                <input type="checkbox" name="roundPlayAreas" id="roundPlayAreas" title="Round all the play areas to the nearest integer" />
-                <label>Round the play areas</label>
+                <label>
+                <input type="checkbox" name="roundPlayAreas" id="roundPlayAreas" title="Round all the play areas to the nearest integer" />Round the play areas
+                </label>
             </div>
         </div>
     </div>
