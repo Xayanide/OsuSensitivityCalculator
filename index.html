@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>osu! Sensitivity Calculator for Mouse</title>
@@ -15,25 +13,30 @@
             <h1>osu! Sensitivity Calculator for Mouse</h1>
         </div>
         PPI
-        <input id="ppi" type="number" value="800" title="Mouse's DPI or PPI used." />
+        <input id="ppiInput" type="number" value="800" title="Mouse's DPI or PPI used." />
         <br />Windows Sensitivity
-        <input id="wintext" type="number" value="6" min="1" max="11" title="Windows' sensitivity used from 1 to 11" oninput="winsens.value=wintext.value" />
-        <input id="winsens" type="range" value="6" min="1" max="11" title="Windows' sensitivity range from 1 to 11" oninput="wintext.value=winsens.value" />
+        <input id="windowsNumberInput" type="number" value="6" min="1" max="11" title="Windows' sensitivity used from 1 to 11" oninput="windowsRangeInput.value=windowsNumberInput.value" />
+        <input id="windowsRangeInput" type="range" value="6" min="1" max="11" title="Windows' sensitivity range from 1 to 11" oninput="windowsNumberInput.value=windowsRangeInput.value" />
         <br />osu! Sensitivity Multiplier
-        <input id="osusens" type="number" min="0.4" max="6" value="1" title="Sensitivity multiplier used in osu!" />
+        <input id="gameNumberInput" type="number" min="0.4" max="6" value="1" title="Sensitivity multiplier used in osu!" />
+        <br />
         <br />Resolution:
         <br />Width:
-        <input id="width" type="number" value="800" title="In-game screen resolution width" />
+        <input id="windowsWidthInput" type="number" value="800" title="Screen resolution's width" />
         <br />Height:
-        <input id="height" type="number" value="600" title="In-game screen resolution height" />
+        <input id="windowsHeightInput" type="number" value="600" title="Screen resolution's height" />
         <div id="results">
             <br />
-            <div>Effective PPI: <span id='result'></span></div>
-            <div>Playarea resolution: <span id='playres'></span></div>
-            <div>Playarea: <span id='playarea'></span></div>
-            <div>Playarea (cm): <span id='playareacm'></span></div>
+            <div>Effective PPI: <span id='playPPI'></span></div>
+            <div>Playarea resolution: <span id='playResolution'></span></div>
+            <div>Playarea (in): <span id='playAreaIN'></span></div>
+            <div>Playarea (cm): <span id='playAreaCM'></span></div>
+            <div>Playarea (mm): <span id='playAreaMM'></span></div>
+            <div>
+                <input type="checkbox" name="roundPlayAreas" id="roundPlayAreas" />
+                <label>Round the play areas</label>
+            </div>
         </div>
-        <br />
-        </div>
+    </div>
 </body>
 </html>
