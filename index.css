@@ -1,22 +1,25 @@
-
-#textInput, #osusens, #ppi {
-   width:75px;
+#winsensrange,
+#osusens,
+#ppi {
+    width:75px;
 }
+
 .header {
     padding: 10px;
     background: #B7E5E3;
     text-align: center;
 }
 
-#winsens {
-	width: 200px;
+#winsensrange {
+    width: 200px;
 }
-*{
-	margin-top: 10px; 
-	margin-bottom: 10px; 
+
+* {
+    margin-top: 10px; 
+    margin-bottom: 10px; 
 }
 
 body {
-    font-family: Arial;
+    font-family: arial;
     margin: 0;
 }
