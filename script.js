@@ -5,7 +5,7 @@ $('#ppi').change(function () {
     calculateSens();
 });
 
-$('#textInput').change(function () {
+$('#wintext').change(function () {
     winsens = $(this).val();
     calculateSens();
 });
