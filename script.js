@@ -1,73 +1,79 @@
 $(document).ready(function() {
     $('#ppi').change(function() {
         ppi = $(this).val();
-        calculateSens();
+        calculateSensitivity();
     });
 
     $('#winsens').change(function() {
-        winsens = $(this).val();
-        $('#winsensrange').val(winsens);
-        calculateSens();
+        windowsSensitivity = $(this).val();
+        $('#winsensrange').val(windowsSensitivity);
+        calculateSensitivity();
     });
 
     $('#winsensrange').change(function() {
-        winsens = $(this).val();
-        $('#winsens').val(winsens);
-        calculateSens();
+        windowsSensitivity = $(this).val();
+        $('#winsens').val(windowsSensitivity);
+        calculateSensitivity();
     });
 
     $('#osusens').change(function() {
-        osusens = $(this).val();
-        calculateSens();
+        osuSensitivity = $(this).val();
+        calculateSensitivity();
     });
 
     $('#width').change(function() {
-        winWidth = $(this).val();
-        calculateSens();
+        windowsWidth = $(this).val();
+        calculateSensitivity();
     });
 
     $('#height').change(function() {
-        winHeight = $(this).val();
-        calculateSens();
+        windowsHeight = $(this).val();
+        calculateSensitivity();
+    });
+
+    $('#playarea-round').change(function() {
+        calculateSensitivity();
     });
 
     const getPlayArea = function() {
-        if ((winWidth / winHeight) >= (4.0 / 3)) {
-            playHeight = winHeight;
-            playWidth = winHeight * (4.0 / 3);
+        if ((windowsWidth / windowsHeight) >= (4.0 / 3)) {
+            playHeight = windowsHeight;
+            playWidth = windowsHeight * (4.0 / 3);
         } else {
-            playWidth = winWidth;
-            playHeight = winWidth / (4 / 3);
+            playWidth = windowsWidth;
+            playHeight = windowsWidth / (4 / 3);
         }
     };
 
-    const getWinMulti = function(sens) {
-        if (sens >= 1 && sens <= 11) {
+    const getWindowsMultiplier = function(sensitivity) {
+        if (sensitivity >= 1 && sensitivity <= 11) {
             const list = [0.00625, 0.0125, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 3.5];
-            return list[sens - 1];
+            return list[sensitivity - 1];
         } else {
             return 0;
         }
     };
-    const calculateSens = function() {
+    const calculateSensitivity = function() {
         getPlayArea();
-        effectivePPI = ppi * getWinMulti(winsens) * osusens;
-        $('#result').text(effectivePPI);
-        $('#playres').text(playWidth + 'x' + playHeight);
-        effwidth = Math.round((playWidth / effectivePPI) * 100) / 100;
-        effheight = Math.round((playHeight / effectivePPI) * 100) / 100;
-        $('#playarea').text(effwidth + '" x ' + effheight + '"');
-        $('#playareacm').text(effwidth * 2.54 + 'cm x ' + effheight * 2.54 + 'cm');
+        effectivePPI = ppi * getWindowsMultiplier(windowsSensitivity) * osuSensitivity;
+        $('#playppi').text(effectivePPI);
+        $('#playres').text(`${playWidth}x${playHeight}`);
+        effectiveWidth = Math.round((playWidth / effectivePPI) * 100) / 100;
+        effectiveHeight = Math.round((playHeight / effectivePPI) * 100) / 100;
+        $('#playarea-in').text($('#playarea-round').is(':checked') ? `${Math.round(effectiveWidth)}" x ${Math.round(effectiveHeight)}"` : `${effectiveWidth}" x ${effectiveHeight}"`);
+        $('#playarea-cm').text($('#playarea-round').is(':checked') ? `${Math.round(effectiveWidth * 2.54)}cm x ${Math.round(effectiveHeight * 2.54)}cm` : `${(effectiveWidth) * 2.54}cm x ${effectiveHeight * 2.54}cm`);
+        $('#playarea-mm').text($('#playarea-round').is(':checked') ? `${Math.round(effectiveWidth * 25.4)}mm x ${Math.round(effectiveHeight * 25.4)}mm` : `${(effectiveWidth) * 25.4}mm x ${effectiveHeight * 25.4}mm`);
     };
     let effectivePPI;
-    let effwidth;
-    let effheight;
+    let effectiveWidth;
+    let effectiveHeight;
     let ppi = 800;
-    let winsens = 6;
-    let osusens = 1;
-    let winWidth = 800;
-    let winHeight = 600;
+    let windowsSensitivity = 6;
+    let osuSensitivity = 1;
+    let windowsWidth = 800;
+    let windowsHeight = 600;
     let playWidth = 800;
     let playHeight = 600;
-    calculateSens();
+
+    calculateSensitivity();
 });
