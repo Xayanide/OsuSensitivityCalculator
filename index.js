@@ -51,7 +51,7 @@ $(document).ready(function() {
             return 0;
         }
     };
-    var calculateSens = function() {
+    const calculateSens = function() {
         getPlayArea();
         effectivePPI = ppi * getWinMulti(winsens) * osusens;
         $('#result').text(effectivePPI);
@@ -61,14 +61,15 @@ $(document).ready(function() {
         $('#playarea').text(effwidth + '" x ' + effHeight + '"');
         $('#playareacm').text(effwidth * 2.54 + 'cm x ' + effHeight * 2.54 + 'cm');
     };
+    let effectivePPI;
     let effwidth;
-    let effheight;
-    var ppi = 800;
-    var winsens = 10;
-    var osusens = 1;
-    var winWidth = 1920;
-    var winHeight = 1080;
-    var playWidth = 1920;
-    var playHeight = 1080;
+    let effHeight;
+    let ppi = 800;
+    let winsens = 10;
+    let osusens = 1;
+    let winWidth = 1920;
+    let winHeight = 1080;
+    let playWidth = 1920;
+    let playHeight = 1080;
     calculateSens();
 });
