@@ -40,7 +40,7 @@ function calculateSensitivity() {
     document.getElementById('playAreaMM').innerHTML = document.querySelector('#roundPlayAreas').checked ? `${Math.round(effectiveWidth * 25.4)}mm x ${Math.round(effectiveHeight * 25.4)}mm` : `${effectiveWidth * 25.4}mm x ${effectiveHeight * 25.4}mm`;
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
 
     document.getElementById('ppiInput').addEventListener('change', function() {
         ppi = document.getElementById('ppiInput').value;
@@ -77,4 +77,4 @@ window.onload = () => {
     });
 
     calculateSensitivity();
-};
+});
