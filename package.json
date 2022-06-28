@@ -1,0 +1,14 @@
+{
+  "name": "osu-sensitivity-calculator-for-mouse",
+  "version": "1.0.0",
+  "description": "osu! Sensitivity calculator for Mouse.",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.18.0"
+  }
+}
