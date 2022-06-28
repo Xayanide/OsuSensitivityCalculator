@@ -1,7 +1,6 @@
-#winsens,
-#osusens,
-#ppi {
-    width: 75px;
+* {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .header {
@@ -10,16 +9,17 @@
     text-align: center;
 }
 
-#winsensrange {
-    width: 200px;
-}
-
-* {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 body {
     font-family: Arial;
     margin: 0;
+}
+
+#winsens,
+#osusens,
+#ppi {
+    width: 75px;
+}
+
+#winsensrange {
+    width: 200px;
 }
