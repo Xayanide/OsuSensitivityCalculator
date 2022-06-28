@@ -44,32 +44,58 @@ function calculateSensitivity() {
 window.addEventListener('load', () => {
 
     document.getElementById('ppiInput').addEventListener('change', function() {
-        ppi = document.getElementById('ppiInput').value;
+        if (document.getElementById('ppiInput').value < 1) {
+            document.getElementById('ppiInput').value = ppi;
+        } else {
+            ppi = document.getElementById('ppiInput').value;
+        }
         calculateSensitivity();
     });
 
     document.getElementById('windowsNumberInput').addEventListener('change', function() {
-        windowsSensitivity = document.getElementById('windowsNumberInput').value;
+        if (document.getElementById('windowsNumberInput').value < 1 || document.getElementById('windowsNumberInput').value > 11) {
+            document.getElementById('windowsNumberInput').value = windowsSensitivity;
+            document.getElementById('windowsRangeInput').value = windowsSensitivity;
+        } else {
+            windowsSensitivity = document.getElementById('windowsNumberInput').value;
+        }
         calculateSensitivity();
     });
 
     document.getElementById('windowsRangeInput').addEventListener('change', function() {
-        windowsSensitivity = document.getElementById('windowsRangeInput').value;
+        if (isNaN(document.getElementById('windowsRangeInput').value)) {
+            document.getElementById('windowsRangeInput').value = windowsSensitivity;
+            document.getElementById('windowsNumberInput').value = windowsSensitivity;
+        } else {
+            windowsSensitivity = document.getElementById('windowsRangeInput').value;
+        }
         calculateSensitivity();
     });
 
     document.getElementById('gameNumberInput').addEventListener('change', function() {
-        gameSensitivity = document.getElementById('gameNumberInput').value;
+        if (document.getElementById('gameNumberInput').value < 0.40 || document.getElementById('gameNumberInput').value > 6.00) {
+            document.getElementById('gameNumberInput').value = gameSensitivity;
+        } else {
+            gameSensitivity = document.getElementById('gameNumberInput').value;
+        }
         calculateSensitivity();
     });
 
     document.getElementById('windowsWidthInput').addEventListener('change', function() {
-        windowsWidth = document.getElementById('windowsWidthInput').value;
+        if (document.getElementById('windowsWidthInput').value < 0) {
+            document.getElementById('windowsWidthInput').value = windowsWidth;
+        } else {
+            windowsWidth = document.getElementById('windowsWidthInput').value;
+        }
         calculateSensitivity();
     });
 
     document.getElementById('windowsHeightInput').addEventListener('change', function() {
-        windowsHeight = document.getElementById('windowsHeightInput').value;
+        if (document.getElementById('windowsHeightInput').value < 0) {
+            document.getElementById('windowsHeightInput').value = windowsHeight;
+        } else {
+            windowsHeight = document.getElementById('windowsHeightInput').value;
+        }
         calculateSensitivity();
     });
 
