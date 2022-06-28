@@ -63,9 +63,9 @@ $(document).ready(function() {
     let ppi = 800;
     let winsens = 10;
     let osusens = 1;
-    let winWidth = 1920;
-    let winHeight = 1080;
-    let playWidth = 1920;
-    let playHeight = 1080;
+    let winWidth = 800;
+    let winHeight = 600;
+    let playWidth = 800;
+    let playHeight = 600;
     calculateSens();
 });
