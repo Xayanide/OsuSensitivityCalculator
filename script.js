@@ -58,16 +58,18 @@ window.addEventListener('load', () => {
             document.getElementById('windowsRangeInput').value = windowsSensitivity;
         } else {
             windowsSensitivity = document.getElementById('windowsNumberInput').value;
+            document.getElementById('windowsRangeInput').value = document.getElementById('windowsNumberInput').value;
         }
         calculateSensitivity();
     });
 
-    document.getElementById('windowsRangeInput').addEventListener('change', function() {
+    document.getElementById('windowsRangeInput').addEventListener('input', function() {
         if (isNaN(document.getElementById('windowsRangeInput').value)) {
             document.getElementById('windowsRangeInput').value = windowsSensitivity;
             document.getElementById('windowsNumberInput').value = windowsSensitivity;
         } else {
             windowsSensitivity = document.getElementById('windowsRangeInput').value;
+            document.getElementById('windowsNumberInput').value = document.getElementById('windowsRangeInput').value;
         }
         calculateSensitivity();
     });
