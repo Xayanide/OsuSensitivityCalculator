@@ -40,8 +40,8 @@ $(document).ready(function() {
     };
 
     const getWinMulti = function(sens) {
-        if (sens >= 1 && sens <= 20) {
-            const list = [1 / 32, 1 / 16, 1 / 8, 2 / 8, 3 / 8, 4 / 8, 5 / 8, 6 / 8, 7 / 8, 1.0, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5];
+        if (sens >= 1 && sens <= 11) {
+            const list = [0.00625, 0.0125, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 3.5];
             return list[sens - 1];
         } else {
             return 0;
