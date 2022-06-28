@@ -13,6 +13,9 @@
     "ecmaVersion": "latest"
   },
   "rules": {
+    "prefer-template": "error",
+    "no-useless-concat": "error",
+    "template-curly-spacing": "error",
     "arrow-spacing": ["warn", { "before": true, "after": true }],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
     "comma-dangle": ["error", "always-multiline"],
