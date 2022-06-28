@@ -28,6 +28,7 @@ let gameSensitivity = 1;
 let effectivePPI;
 let effectiveWidth;
 let effectiveHeight;
+
 function calculateSensitivity() {
     getPlayArea();
     effectivePPI = ppi * getWindowsMultiplier(windowsSensitivity) * gameSensitivity;
