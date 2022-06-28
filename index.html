@@ -14,23 +14,25 @@
             <h1>osu! Sensitivity Calculator for Mouse</h1>
         </div>
         PPI
-        <input id="ppi" value="800">
-        Windows Sensitivity
-        <input id="textInput" type="number" value="6" class="form-control">
-        <input type="range" value="6" min="1" max="11" id="winsens" class="form-control custom-range">
-        osu! Sensitivity Multiplier
-        <input id="osusens" value="1">
-        <br>Resolution:
-        <br>Width:
-        <input id="width" value="800">
-        Height:
-        <input id="height" value="600">
+        <input id="ppi" value="800" />
+        <br />Windows Sensitivity
+        <input id="textInput" type="number" value="6" min="1" max="11" oninput="winsens.value=textInput.value" />
+        <input id="winsens" type="range" value="6" min="1" max="11" oninput="textInput.value=winsens.value" />
+        <br />osu! Sensitivity Multiplier
+        <input id="osusens" value="1" />
+        <br />Resolution:
+        <br />Width:
+        <input id="width" value="800" />
+        <br />Height:
+        <input id="height" value="600" />
         <div id="results">
+            <br>
             <div>Effective PPI: <span id='result'></span></div>
             <div>Playarea resolution: <span id='playres'></span></div>
             <div>Playarea: <span id='playarea'></span></div>
             <div>Playarea (cm): <span id='playareacm'></span></div>
-        </div><br>
+        </div>
+        <br />
         </div>
 </body>
 </html>

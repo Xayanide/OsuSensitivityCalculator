@@ -1,5 +1,12 @@
+$(document).ready(function(){
+
 $('#ppi').change(function () {
     ppi = $(this).val();
+    calculateSens();
+});
+
+$('#textInput').change(function () {
+    winsens = $(this).val();
     calculateSens();
 });
 
@@ -61,3 +68,4 @@ var winHeight = 600;
 var playWidth = 800;
 var playHeight = 600;
 calculateSens();
+});
