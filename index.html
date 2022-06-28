@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -14,19 +14,20 @@
             <h1>osu! Sensitivity Calculator for Mouse</h1>
         </div>
         PPI
-        <input id="ppi" value="800" />
+        <input id="ppi" value="800" title="Mouse DPI or PPI" />
         <br />Windows Sensitivity
-        <input id="textInput" type="number" value="6" min="1" max="11" oninput="winsens.value=textInput.value" />
-        <input id="winsens" type="range" value="6" min="1" max="11" oninput="textInput.value=winsens.value" />
+        <input id="textInput" type="number" value="6" min="1" max="11" title="Windows Sensitivity" oninput="winsens.value=textInput.value" />
+        <input id="winsens" type="range" value="6" min="1" max="11" title="Windows Sensitivity Slider" oninput="textInput.value=winsens.value" />
         <br />osu! Sensitivity Multiplier
-        <input id="osusens" value="1" />
+        <input id="osusens" value="1" title="osu! Sensitivity" />
+        <br />
         <br />Resolution:
         <br />Width:
-        <input id="width" value="800" />
+        <input id="width" value="800" title="In-game Resolution Width" />
         <br />Height:
-        <input id="height" value="600" />
+        <input id="height" value="600" title="In-game Resolution Height" />
         <div id="results">
-            <br>
+            <br />
             <div>Effective PPI: <span id='result'></span></div>
             <div>Playarea resolution: <span id='playres'></span></div>
             <div>Playarea: <span id='playarea'></span></div>
