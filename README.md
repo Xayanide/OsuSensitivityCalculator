@@ -1,3 +1,3 @@
-# OsuSensitivityCalculator
+# osu! Sensitivity Calculator for Mouse
 
-Osu! Sensitivity Calculator for Mouse
+osu! Sensitivity Calculator for Mouse.
