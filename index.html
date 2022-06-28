@@ -4,9 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="script.js"></script>
         <title>osu! Sensitivity Calculator for Mouse</title>
     </head>
@@ -41,20 +40,29 @@
                 </p>
                 <div id="results">
                     <div>
-                        <label for="result">Effective PPI :</label>
-                        <span id='result'></span>
+                        <label for="playppi">Effective PPI :</label>
+                        <span id='playppi'></span>
                     </div>
                     <div>
                         <label for="playres">Playarea resolution :</label>
                         <span id='playres'></span>
                     </div>
                     <div>
-                        <label for="playarea">Playarea :</label>
-                        <span id='playarea'></span>
+                        <label for="playarea-in">Playarea (in) :</label>
+                        <span id='playarea-in'></span>
                     </div>
                     <div>
-                        <label for="playareacm">Playarea (cm) :</label>
-                        <span id='playareacm'></span>
+                        <label for="playarea-cm">Playarea (cm) :</label>
+                        <span id='playarea-cm'></span>
+                    </div>
+                    <div>
+                        <label for="playarea-mm">Playarea (mm) :</label>
+                        <span id='playarea-mm'></span>
+                    </div>
+                    <div>
+                        <label for="playarea-round">
+                            <input type="checkbox" id="playarea-round" name="playarea-round" title="Round all play areas to the nearest integer"> Round all play areas</input>
+                        </label>
                     </div>
                 </div>
             </div>
