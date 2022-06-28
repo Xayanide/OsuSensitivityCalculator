@@ -13,28 +13,28 @@
             <h1>osu! Sensitivity Calculator for Mouse</h1>
         </div>
         PPI
-        <input id="ppiInput" type="number" value="800" title="Mouse's DPI or PPI used." />
+        <input id="ppi-input" type="number" value="800" title="Mouse's DPI or PPI used." />
         <br />Windows Sensitivity
-        <input id="windowsNumberInput" type="number" value="6" min="1" max="11" title="Windows' sensitivity used from 1 to 11" />
-        <input id="windowsRangeInput" type="range" value="6" min="1" max="11" title="Windows' sensitivity range from 1 to 11" />
+        <input id="windows-sensitivity" type="number" value="6" min="1" max="11" title="Windows sensitivity used from 1 to 11" />
+        <input id="windows-sensitivity-range" type="range" value="6" min="1" max="11" title="Windows sensitivity range from 1 to 11" />
         <br />osu! Sensitivity Multiplier
-        <input id="gameNumberInput" type="number" step="0.1" min="0.40" max="6" value="1" title="Sensitivity multiplier used in osu!" />
+        <input id="osugame-sensitivity" type="number" step="0.1" min="0.40" max="6" value="1" title="osu! in-game sensitivity multiplier" />
         <br />
         <br />Resolution:
         <br />Width:
-        <input id="windowsWidthInput" type="number" value="800" title="Screen resolution's width" />
+        <input id="windows-width" type="number" value="800" title="Screen resolution's width" />
         <br />Height:
-        <input id="windowsHeightInput" type="number" value="600" title="Screen resolution's height" />
+        <input id="windows-height" type="number" value="600" title="Screen resolution's height" />
         <div id="results">
             <br />
-            <div>Effective PPI: <span id='playPPI'></span></div>
-            <div>Playarea resolution: <span id='playResolution'></span></div>
-            <div>Playarea (in): <span id='playAreaIN'></span></div>
-            <div>Playarea (cm): <span id='playAreaCM'></span></div>
-            <div>Playarea (mm): <span id='playAreaMM'></span></div>
+            <div>Effective PPI: <span id='play-ppi'></span></div>
+            <div>Playarea resolution: <span id='play-resolution'></span></div>
+            <div>Playarea (in): <span id='playarea-in'></span></div>
+            <div>Playarea (cm): <span id='playarea-cm'></span></div>
+            <div>Playarea (mm): <span id='playarea-mm'></span></div>
             <div>
                 <label>
-                <input type="checkbox" name="roundPlayAreas" id="roundPlayAreas" title="Round all the play areas to the nearest integer" />Round the play areas
+                <input type="checkbox" name="round-playarea" id="round-playarea" title="Round all the play areas to the nearest integer" />Round the play areas
                 </label>
             </div>
         </div>

@@ -1,15 +1,15 @@
 let windowsWidth = 800;
-let gameWidth = 800;
+let osuGameWidth = 800;
 let windowsHeight = 600;
-let gameHeight = 600;
+let osuGameHeight = 600;
 
 function getPlayArea() {
     if ((windowsWidth / windowsHeight) >= (4.0 / 3)) {
-        gameHeight = windowsHeight;
-        gameWidth = windowsHeight * (4.0 / 3);
+        osuGameHeight = windowsHeight;
+        osuGameWidth = windowsHeight * (4.0 / 3);
     } else {
-        gameWidth = windowsWidth;
-        gameHeight = windowsWidth / (4 / 3);
+        osuGameWidth = windowsWidth;
+        osuGameHeight = windowsWidth / (4 / 3);
     }
 }
 
@@ -24,84 +24,84 @@ function getWindowsMultiplier(sensitivity) {
 
 let ppi = 800;
 let windowsSensitivity = 6;
-let gameSensitivity = 1;
+let osuGameSensitivity = 1;
 let effectivePPI;
 let effectiveWidth;
 let effectiveHeight;
 
 function calculateSensitivity() {
     getPlayArea();
-    effectivePPI = ppi * getWindowsMultiplier(windowsSensitivity) * gameSensitivity;
-    document.getElementById('playPPI').innerHTML = effectivePPI;
-    document.getElementById('playResolution').innerHTML = `${gameWidth}x${gameHeight}`;
-    effectiveWidth = Math.round((gameWidth / effectivePPI) * 100) / 100;
-    effectiveHeight = Math.round((gameHeight / effectivePPI) * 100) / 100;
-    document.getElementById('playAreaIN').innerHTML = document.querySelector('#roundPlayAreas').checked ? `${Math.round(effectiveWidth)}" x ${Math.round(effectiveHeight)}"` : `${effectiveWidth}" x ${effectiveHeight}"`;
-    document.getElementById('playAreaCM').innerHTML = document.querySelector('#roundPlayAreas').checked ? `${Math.round(effectiveWidth * 2.54)}cm x ${Math.round(effectiveHeight * 2.54)}cm` : `${effectiveWidth * 2.54}cm x ${effectiveHeight * 2.54}cm`;
-    document.getElementById('playAreaMM').innerHTML = document.querySelector('#roundPlayAreas').checked ? `${Math.round(effectiveWidth * 25.4)}mm x ${Math.round(effectiveHeight * 25.4)}mm` : `${effectiveWidth * 25.4}mm x ${effectiveHeight * 25.4}mm`;
+    effectivePPI = ppi * getWindowsMultiplier(windowsSensitivity) * osuGameSensitivity;
+    document.getElementById('play-ppi').innerHTML = effectivePPI;
+    document.getElementById('play-resolution').innerHTML = `${osuGameWidth}x${osuGameHeight}`;
+    effectiveWidth = Math.round((osuGameWidth / effectivePPI) * 100) / 100;
+    effectiveHeight = Math.round((osuGameHeight / effectivePPI) * 100) / 100;
+    document.getElementById('playarea-in').innerHTML = document.querySelector('#round-playarea').checked ? `${Math.round(effectiveWidth)}" x ${Math.round(effectiveHeight)}"` : `${effectiveWidth}" x ${effectiveHeight}"`;
+    document.getElementById('playarea-cm').innerHTML = document.querySelector('#round-playarea').checked ? `${Math.round(effectiveWidth * 2.54)}cm x ${Math.round(effectiveHeight * 2.54)}cm` : `${effectiveWidth * 2.54}cm x ${effectiveHeight * 2.54}cm`;
+    document.getElementById('playarea-mm').innerHTML = document.querySelector('#round-playarea').checked ? `${Math.round(effectiveWidth * 25.4)}mm x ${Math.round(effectiveHeight * 25.4)}mm` : `${effectiveWidth * 25.4}mm x ${effectiveHeight * 25.4}mm`;
 }
 
 window.addEventListener('load', () => {
 
-    document.getElementById('ppiInput').addEventListener('change', function() {
-        if (document.getElementById('ppiInput').value < 1) {
-            document.getElementById('ppiInput').value = ppi;
+    document.getElementById('ppi-input').addEventListener('change', function() {
+        if (document.getElementById('ppi-input').value < 1) {
+            document.getElementById('ppi-input').value = ppi;
         } else {
-            ppi = document.getElementById('ppiInput').value;
+            ppi = document.getElementById('ppi-input').value;
         }
         calculateSensitivity();
     });
 
-    document.getElementById('windowsNumberInput').addEventListener('change', function() {
-        if (document.getElementById('windowsNumberInput').value < 1 || document.getElementById('windowsNumberInput').value > 11) {
-            document.getElementById('windowsNumberInput').value = windowsSensitivity;
-            document.getElementById('windowsRangeInput').value = windowsSensitivity;
+    document.getElementById('windows-sensitivity').addEventListener('change', function() {
+        if (document.getElementById('windows-sensitivity').value < 1 || document.getElementById('windows-sensitivity').value > 11) {
+            document.getElementById('windows-sensitivity').value = windowsSensitivity;
+            document.getElementById('windows-sensitivity-range').value = windowsSensitivity;
         } else {
-            windowsSensitivity = document.getElementById('windowsNumberInput').value;
-            document.getElementById('windowsRangeInput').value = document.getElementById('windowsNumberInput').value;
+            windowsSensitivity = document.getElementById('windows-sensitivity').value;
+            document.getElementById('windows-sensitivity-range').value = document.getElementById('windows-sensitivity').value;
         }
         calculateSensitivity();
     });
 
-    document.getElementById('windowsRangeInput').addEventListener('input', function() {
-        if (isNaN(document.getElementById('windowsRangeInput').value)) {
-            document.getElementById('windowsRangeInput').value = windowsSensitivity;
-            document.getElementById('windowsNumberInput').value = windowsSensitivity;
+    document.getElementById('windows-sensitivity-range').addEventListener('input', function() {
+        if (isNaN(document.getElementById('windows-sensitivity-range').value)) {
+            document.getElementById('windows-sensitivity-range').value = windowsSensitivity;
+            document.getElementById('windows-sensitivity').value = windowsSensitivity;
         } else {
-            windowsSensitivity = document.getElementById('windowsRangeInput').value;
-            document.getElementById('windowsNumberInput').value = document.getElementById('windowsRangeInput').value;
+            windowsSensitivity = document.getElementById('windows-sensitivity-range').value;
+            document.getElementById('windows-sensitivity').value = document.getElementById('windows-sensitivity-range').value;
         }
         calculateSensitivity();
     });
 
-    document.getElementById('gameNumberInput').addEventListener('change', function() {
-        if (document.getElementById('gameNumberInput').value < 0.40 || document.getElementById('gameNumberInput').value > 6.00) {
-            document.getElementById('gameNumberInput').value = gameSensitivity;
+    document.getElementById('osugame-sensitivity').addEventListener('change', function() {
+        if (document.getElementById('osugame-sensitivity').value < 0.40 || document.getElementById('osugame-sensitivity').value > 6.00) {
+            document.getElementById('osugame-sensitivity').value = osuGameSensitivity;
         } else {
-            gameSensitivity = document.getElementById('gameNumberInput').value;
+            osuGameSensitivity = document.getElementById('osugame-sensitivity').value;
         }
         calculateSensitivity();
     });
 
-    document.getElementById('windowsWidthInput').addEventListener('change', function() {
-        if (document.getElementById('windowsWidthInput').value < 0) {
-            document.getElementById('windowsWidthInput').value = windowsWidth;
+    document.getElementById('windows-width').addEventListener('change', function() {
+        if (document.getElementById('windows-width').value < 0) {
+            document.getElementById('windows-width').value = windowsWidth;
         } else {
-            windowsWidth = document.getElementById('windowsWidthInput').value;
+            windowsWidth = document.getElementById('windows-width').value;
         }
         calculateSensitivity();
     });
 
-    document.getElementById('windowsHeightInput').addEventListener('change', function() {
-        if (document.getElementById('windowsHeightInput').value < 0) {
-            document.getElementById('windowsHeightInput').value = windowsHeight;
+    document.getElementById('windows-height').addEventListener('change', function() {
+        if (document.getElementById('windows-height').value < 0) {
+            document.getElementById('windows-height').value = windowsHeight;
         } else {
-            windowsHeight = document.getElementById('windowsHeightInput').value;
+            windowsHeight = document.getElementById('windows-height').value;
         }
         calculateSensitivity();
     });
 
-    document.getElementById('roundPlayAreas').addEventListener('change', function() {
+    document.getElementById('round-playarea').addEventListener('change', function() {
         calculateSensitivity();
     });
 
